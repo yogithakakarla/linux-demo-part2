@@ -246,3 +246,9 @@ This command adds a rule to allow incoming TCP traffic on port 22 (SSH) from the
 
 iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
 ```
+
+This command deletes the previously added rule that allows incoming SSH traffic from the specified IP range.
+
+```
+iptables -D INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
+```
