@@ -187,6 +187,45 @@ chmod u+rwx,g+r-x,o-rwx test-file # read access for owner , add read for group a
 
 ### SSH and SCP
 
+SSH (Secure Shell):
 
+SSH is a network protocol used for secure remote access to systems over unsecured networks.
+
+It provides a secure channel for communication between two computers, allowing users to log in securely, execute commands remotely, and transfer files securely.
+
+SSH operates on TCP port 22 by default, but it can be configured to use different ports if needed.
+
+SSH supports various authentication methods, including password authentication, public key authentication, and multi-factor authentication (e.g., using Google Authenticator).
+
+
+SCP
+
+SCP is a command-line tool used for securely transferring files between a local and a remote host or between two remote hosts over an SSH connection.
+
+It uses the SSH protocol for authentication and encryption, providing secure file transfers.
+
+SCP syntax is similar to the cp command in Unix/Linux systems, making it easy to use and integrate into shell scripts.
+
+SCP supports both recursive copying of directories and copying of multiple files in a single command.
+
+SCP preserves file permissions, timestamps, and ownership during file transfers, maintaining the integrity of the transferred files.
+
+SCP can be used both interactively, where users specify source and destination paths manually, and non-interactively, where file transfers are scripted or automated.
+
+Difference between SCP and cp in Linux:-
+
+cp is a command-line utility used for copying files and directories within a filesystem.
+
+It operates locally and does not provide encryption or secure transfer mechanisms.
+
+It is commonly used for tasks such as duplicating files, creating backups, and moving files within the same machine.
+
+cp is suitable for local file operations where encryption and secure transfer are not required.
+
+scp encrypts data during transfer, providing secure file copying between hosts as well as locally.
+
+It is commonly used for tasks such as transferring files between a local machine and a remote server or between two remote servers.
+
+scp is suitable for scenarios where data privacy, integrity, and security are paramount, such as transferring sensitive files or backups over untrusted networks.
 
 ### IP Tables
