@@ -252,3 +252,21 @@ This command deletes the previously added rule that allows incoming SSH traffic 
 ```
 iptables -D INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
 ```
+
+
+Suppose you want to allow incoming SSH traffic (port 22) from a specific IP address range (192.168.1.0/24) while blocking all other incoming traffic. You can achieve this with iptables as follows:
+
+
+```
+# Flush existing rules (optional)
+iptables -F
+
+# Set default policy to drop incoming traffic
+iptables -P INPUT DROP
+
+# Allow incoming SSH traffic from specific IP range
+iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
+
+# Allow incoming ICMP (ping) traffic (optional)
+iptables -A INPUT -p icmp -j ACCEPT
+```
