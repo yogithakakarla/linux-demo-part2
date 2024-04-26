@@ -229,3 +229,20 @@ It is commonly used for tasks such as transferring files between a local machine
 scp is suitable for scenarios where data privacy, integrity, and security are paramount, such as transferring sensitive files or backups over untrusted networks.
 
 ### IP Tables
+
+IPtables is a firewall management tool in Linux that allows administrators to define rules for controlling the flow of network traffic. 
+
+It operates within the Linux kernel's netfilter framework and provides capabilities for packet filtering, Network Address Translation (NAT), and packet mangling.
+
+we can view existing iptables rules as below. This command lists all the currently configured rules, including the default policies for each chain (INPUT, OUTPUT, FORWARD), as well as any user-defined rules.
+
+```
+iptables -L -n
+
+```
+This command adds a rule to allow incoming TCP traffic on port 22 (SSH) from the IP range 192.168.1.0/24.
+
+```
+
+iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
+```
