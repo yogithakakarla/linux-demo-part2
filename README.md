@@ -197,6 +197,17 @@ SSH operates on TCP port 22 by default, but it can be configured to use differen
 
 SSH supports various authentication methods, including password authentication, public key authentication, and multi-factor authentication (e.g., using Google Authenticator).
 
+```
+ssh username@remote_host
+```
+
+```
+ssh -p port_number username@remote_host
+
+```
+```
+ssh -i path/to/private_key username@remote_host
+```
 
 SCP
 
@@ -227,6 +238,24 @@ scp encrypts data during transfer, providing secure file copying between hosts a
 It is commonly used for tasks such as transferring files between a local machine and a remote server or between two remote servers.
 
 scp is suitable for scenarios where data privacy, integrity, and security are paramount, such as transferring sensitive files or backups over untrusted networks.
+
+
+```
+scp /path/to/local_file username@remote_host:/path/to/destination
+```
+
+```
+scp username@remote_host:/path/to/remote_file /path/to/destination
+```
+
+
+```
+scp -P port_number username@remote_host:/path/to/remote_file /path/to/destination
+```
+
+```
+scp -i path/to/private_key /path/to/local_file username@remote_host:/path/to/destination
+```
 
 ### IP Tables
 
