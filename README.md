@@ -131,12 +131,59 @@ sudo usermod -aG groupname username #This command adds the specified user to the
 sudo usermod -g groupname username # This command sets the specified group as the user's primary group
 getent group groupname  # listing group members 
 groups username   # list groups user is part of
-
+```
 
 
 ### File permission and Ownership
 
+AS we learnt earlier , that ls -l list out all details of files present over there . it also list permission for file/directory present .
 
+For example if we consider -rwxrwxrwx , the first - represent file type . so lets look what all different types of files we have and how to identify them.
+
+   File Type                Identifier
+
+1) Directory                d
+2) regular File             -
+3) Character device         c
+4) Link                     l
+5) Socket File              s
+6) pipe                     p
+7) Block device             b
+
+In this Linux file permissions , lets look at next 
+    
+    Owner(u)   others(o)
+    |          |
+-  rwx  rwx  rwx
+|        |
+fileype  group
+
+But when we give permissions/modify permissions  we generally mention it as chmod 777 filename.txt  or chmod 466 filename.txt  , so lets check Octal value for each bit 
+
+Bit         Purpose         Octal Value
+r           Read                4
+w           write               2
+x           execute             1
+
+
+SO , lets understand whats 777 -> rwx permissions for owner, group , others   
+                           764 -> rwx for owner , read and write permission for group ,read for  others
+ 
+
+```
+chmod 777 filename.txt
+```
+we can also change permissions as below
+
+```
+chmod u+rwx test-file   # provide rwx permissions to owner(u)
+
+chmod ugo+r-x test-file # provide read permission to user(u),group (g), others (o) and remove execute (x) permissions for u , g ,o
+
+chmod o-rwx test-file  # remove r,w,x for others
+
+chmod u+rwx,g+r-x,o-rwx test-file # read access for owner , add read for group and remove execute for group , remove r,w,x for others
+```
 
 ### SSH and SCP
 
