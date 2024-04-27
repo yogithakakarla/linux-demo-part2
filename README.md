@@ -152,11 +152,13 @@ For example if we consider -rwxrwxrwx , the first - represent file type . so let
 
 In this Linux file permissions , lets look at next 
     
-    Owner(u)   others(o)
-    |          |
--  rwx  rwx  rwx
-|        |
-fileype  group
+
+- rwx  rwx  rwx
+       
+ first - represents filetype
+ next 3 octets represents permissions for owner(u)
+ next 3 octets represents permissions for group(g)
+ next 3 octets represents permissions for others(o)
 
 But when we give permissions/modify permissions  we generally mention it as chmod 777 filename.txt  or chmod 466 filename.txt  , so lets check Octal value for each bit 
 
