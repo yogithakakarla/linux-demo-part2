@@ -142,19 +142,19 @@ For example if we consider -rwxrwxrwx , the first - represent file type . so let
 
    File Type           |     Identifier
 -----------------------|----------------
-1) Directory           |     d
+ Directory             |     d
 -----------------------|----------------
-2) regular File        |     -
+ regular File          |     -
 -----------------------|----------------
-3) Character device    |     c
+ Character device      |     c
 -----------------------|----------------
-4) Link                |     l
+ Link                  |     l
 -----------------------|----------------
-5) Socket File         |     s
+ Socket File           |     s
 -----------------------|----------------
-6) pipe                |     p
+ pipe                  |     p
 -----------------------|----------------
-7) Block device        |     b
+ Block device          |     b
 -----------------------|----------------
 In this Linux file permissions , lets look at next 
     
