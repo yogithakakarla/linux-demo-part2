@@ -140,16 +140,16 @@ AS we learnt earlier , that ls -l list out all details of files present over the
 
 For example if we consider -rwxrwxrwx , the first - represent file type . so lets look what all different types of files we have and how to identify them.
 
-   File Type                Identifier
-
-1) Directory                d
-2) regular File             -
-3) Character device         c
-4) Link                     l
-5) Socket File              s
-6) pipe                     p
-7) Block device             b
-
+   File Type           |     Identifier
+-----------------------|----------------
+1) Directory           |     d
+2) regular File        |     -
+3) Character device    |     c
+4) Link                |     l
+5) Socket File         |     s
+6) pipe                |     p
+7) Block device        |     b
+------------------------------------------
 In this Linux file permissions , lets look at next 
     
 
