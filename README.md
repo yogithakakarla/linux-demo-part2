@@ -68,13 +68,13 @@ Most of the access control files are stored under /etc directory. This directory
 
 In Linux and Unix-like operating systems, some common access control files include:
 
-/etc/passwd: While not strictly an access control file, the /etc/passwd file contains information about user accounts on the system, including their usernames, user IDs (UIDs), home directories, and login shells. It is used by the system to authenticate users during the login process.
+** /etc/passwd: ** While not strictly an access control file, the /etc/passwd file contains information about user accounts on the system, including their usernames, user IDs (UIDs), home directories, and login shells. It is used by the system to authenticate users during the login process.
 
-/etc/shadow: The /etc/shadow file stores encrypted password hashes for user accounts. It is accessible only by the root user and contains more sensitive information than the /etc/passwd file.
+** /etc/shadow: ** The /etc/shadow file stores encrypted password hashes for user accounts. It is accessible only by the root user and contains more sensitive information than the /etc/passwd file.
 
-/etc/group: The /etc/group file contains information about groups on the system, including group names, group IDs (GIDs), and a list of users who are members of each group. It is used to manage group memberships and permissions.
+** /etc/group: ** The /etc/group file contains information about groups on the system, including group names, group IDs (GIDs), and a list of users who are members of each group. It is used to manage group memberships and permissions.
 
-/etc/sudoers: The /etc/sudoers file is a system configuration file that controls the sudo (superuser do) command's behavior. It specifies which users or groups are allowed to execute commands as the root user or another user with elevated privileges.
+** /etc/sudoers: ** The /etc/sudoers file is a system configuration file that controls the sudo (superuser do) command's behavior. It specifies which users or groups are allowed to execute commands as the root user or another user with elevated privileges.
 
 These are just a few examples of access control files commonly used in Linux and Unix-like systems. Depending on the system configuration and installed software, there may be additional access control mechanisms and configuration files used to enforce security policies and manage user access.
 
