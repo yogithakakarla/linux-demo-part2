@@ -143,7 +143,7 @@ For example if we consider -rwxrwxrwx , the first - represent file type . so let
    File Type           |     Identifier
 -----------------------|----------------
  Directory             |     d
-                       |
+-----------------------|
  regular File          |     -
                        |
  Character device      |     c
