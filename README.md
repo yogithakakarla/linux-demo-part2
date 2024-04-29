@@ -170,7 +170,29 @@ sudo usermod -s /sbin/nologin username
 
 Examples: Common examples of restricted shells include /bin/false and /sbin/nologin. Users assigned these shells typically cannot interact with the shell prompt at all.
 
+ Lets discuss about something called **PAM authentication**. Setting up PAM (Pluggable Authentication Modules) configuration involves configuring authentication mechanisms and policies for various services on a Linux system. PAM provides a flexible framework for authenticating users and managing authorization policies.
 
+ PAM configuration files are located in the /etc/pam.d/ directory. Each file corresponds to a specific service or application that uses PAM for authentication. Few files are common-auth, common-account, common-password, and common-session, which are used to define authentication, account management, password management, and session management policies respectively.
+
+The syntax of a PAM configuration line is: module-type control-flag module-path module-arguments
+
+Module Types: Module types include auth, account, password, and session, which correspond to different stages of the authentication process.
+
+
+Control Flags: Control flags determine how the module's success or failure affects the overall authentication process. Common control flags include required, requisite, sufficient, and optional.
+
+Module Path: The module path specifies the location of the PAM module library.
+
+Module Arguments: Module arguments are optional and provide additional configuration options for the module.
+
+Here's an example of a PAM configuration line for SSH authentication (/etc/pam.d/sshd):
+
+```
+auth    required    pam_unix.so
+```
+This line specifies that the pam_unix.so module is required for SSH authentication.
+
+When a user attempts to authenticate (e.g., logging in via SSH or entering a password), the PAM-aware application (e.g., SSH server) invokes the PAM library to handle authentication.
 
 ### File permission and Ownership
 
