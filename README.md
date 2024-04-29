@@ -151,6 +151,7 @@ sudo ls
 sudo pwd
 sudo echo "Hello, world!"
 ```
+Restricted shells can be applied on a per-user basis, allowing administrators to tailor the level of restriction to individual users' needs. For example, certain administrative users might have more privileges than regular users.
 
 **No Interactive Shell:** In some cases, a restricted shell might not even provide an interactive shell prompt. Instead, it might immediately exit upon login or display a message indicating that interactive logins are not allowed.
 
@@ -164,12 +165,10 @@ sudo useradd -s /sbin/nologin username
 sudo usermod -s /sbin/nologin username
 ```
 
-**Security and Compliance:** Restricted shells are often used in environments where security and compliance are paramount. By limiting the capabilities of users, restricted shells help reduce the risk of unauthorized access or malicious actions.
-**User-Specific Restrictions:** Restricted shells can be applied on a per-user basis, allowing administrators to tailor the level of restriction to individual users' needs. For example, certain administrative users might have more privileges than regular users.
+ Restricted shells are often used in environments where security and compliance are paramount. By limiting the capabilities of users, restricted shells help reduce the risk of unauthorized access or malicious actions.
+
+
 Examples: Common examples of restricted shells include /bin/false and /sbin/nologin. Users assigned these shells typically cannot interact with the shell prompt at all.
-
-
-
 
 
 
