@@ -132,6 +132,45 @@ sudo usermod -g groupname username # This command sets the specified group as th
 getent group groupname  # listing group members 
 groups username   # list groups user is part of
 ```
+Lets talk something called restricted shell. A restricted shell is a type of shell program that limits the capabilities and functionalities available to a user when they log in. The purpose of a restricted shell is to provide a controlled environment that prevents users from executing certain commands or accessing parts of the system beyond their allowed scope. Here's what it typically means:
+
+**Limited Command Execution:** Restricted shells often restrict the commands that users can execute. For example, they might only allow basic commands like cd (change directory) or echo, while disallowing potentially dangerous commands like rm (remove) or sudo.
+
+so one way to give sudo permissions to run just few commands is as below
+
+```
+sudo visudo
+
+username ALL=(ALL) NOPASSWD: /bin/ls, /bin/pwd, /bin/echo
+```
+
+Now the user can execute the allowed commands using sudo
+
+```
+sudo ls
+sudo pwd
+sudo echo "Hello, world!"
+```
+
+**No Interactive Shell:** In some cases, a restricted shell might not even provide an interactive shell prompt. Instead, it might immediately exit upon login or display a message indicating that interactive logins are not allowed.
+
+Below commands are to create or modify users with no interactive shell.creating users with non-interactive shells is a security best practice in many environments, particularly for system accounts and service accounts associated with background services or automated processes. It helps to minimize security risks and ensure system integrity.
+
+```
+sudo useradd -s /sbin/nologin username
+```
+
+```
+sudo usermod -s /sbin/nologin username
+```
+
+**Security and Compliance:** Restricted shells are often used in environments where security and compliance are paramount. By limiting the capabilities of users, restricted shells help reduce the risk of unauthorized access or malicious actions.
+**User-Specific Restrictions:** Restricted shells can be applied on a per-user basis, allowing administrators to tailor the level of restriction to individual users' needs. For example, certain administrative users might have more privileges than regular users.
+Examples: Common examples of restricted shells include /bin/false and /sbin/nologin. Users assigned these shells typically cannot interact with the shell prompt at all.
+
+
+
+
 
 
 ### File permission and Ownership
